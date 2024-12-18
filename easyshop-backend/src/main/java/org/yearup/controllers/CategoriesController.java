@@ -46,8 +46,9 @@ public class CategoriesController
             System.out.printf("Category with ID %d not found\n", id );
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return category;
+        return categoryDao.getById(id);
     }
+
 
     // the url to return all products in category 1 would look like this
     // https://localhost:8080/categories/1/products
@@ -64,6 +65,7 @@ public class CategoriesController
 
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
+    //  figure out how to test this
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public void updateCategory(@PathVariable int id, @RequestBody Category category) {categoryDao.update(id, category);}
@@ -71,8 +73,8 @@ public class CategoriesController
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
-    public void deleteCategory(@PathVariable int id)
-    {
-        // delete the category by id
-    }
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(code= HttpStatus.NO_CONTENT)
+    public void deleteCategory(@PathVariable int id) {categoryDao.delete(id);}
 }

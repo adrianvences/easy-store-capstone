@@ -83,6 +83,7 @@ public class ProductsController
         {
             // bug 2
             productDao.update(id,product);
+//            productDao.create(product);
         }
         catch(Exception ex)
         {
