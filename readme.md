@@ -31,7 +31,7 @@ behavior of our application endpoints.
 ## CategoriesController
 We were tasked with adding the logic and proper annotations to the controller.
 
-![categories controller image](src/main/resources/readmeImages/categoriesController.png)
+![categories controller image](readmeImages/categoriesController.png)
 
 
 ---
@@ -41,13 +41,13 @@ We were tasked with adding the logic and proper annotations to the controller.
 We were tasked with adding the logic to the dao. The methods were already implemented for us
 through the CategoriesDao interface.
 
-![categories dao image](src/main/resources/readmeImages/categoriesDao.png)
+![categories dao image](readmeImages/categoriesDao.png)
 
 ---
 
 ## Bugs
 ### Bug 1
-![bug1](src/main/resources/readmeImages/bug1.png)
+![bug1](readmeImages/bug1.png)
 - In bug 1 I had to improve the MySql query
 - Fix the statement set parameters 
 - The issue was that the minimum and maximum price code was wrong. 
@@ -55,7 +55,7 @@ through the CategoriesDao interface.
 ---
 
 ### Bug 2
-![bug2](src/main/resources/readmeImages/bug2.png)
+![bug2](readmeImages/bug2.png)
 - In bug 2 the updateProduct Method had the wrong method called for update
 - It had the create method instead of the update method in updateProduct
 
